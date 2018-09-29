@@ -7,4 +7,16 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="cu_recycle">
+        CU-Recycle
+    </string>
+    <string name="a">
+        Interactive Recycling Assistant\nfor Champaign-Urbana
+    </string>
+    <string name="manual_inpu">
+        Manual Input
+</string>
+    <string name="take_a_phot">
+        Take a Photo
+</string>
 </resources>

@@ -7,5 +7,85 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".EntryPage2"
     tools:showIn="@layout/app_bar_entry_page2">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/entry_page_"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent"
+        >
 
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/app_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="250dp"
+            android:background="#00000000"
+            >
+
+            <TextView
+                android:id="@+id/cu_recycle"
+                android:layout_width="390dp"
+                android:layout_height="87dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="0dp"
+                android:text="@string/cu_recycle"
+                android:textAppearance="@style/cu_recycle"
+                />
+
+            <TextView
+                android:id="@+id/a"
+                android:layout_width="226dp"
+                android:layout_height="42dp"
+                android:layout_below="@+id/cu_recycle"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:text="@string/a"
+                android:textAppearance="@style/a" />
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-67dp"
+            android:layout_marginTop="356dp"
+            android:layout_marginEnd="-0dp"
+            android:layout_marginBottom="180dp"
+            android:background="#00000000">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/button2" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/button1" />
+        </RelativeLayout>
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

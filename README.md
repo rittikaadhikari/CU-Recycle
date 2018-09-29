@@ -8,4 +8,4 @@ Only roughly 35% of recyclable materials are accurately identified and sent to t
 Currently we are in the works of developing an android application and the relevant systems with a focus and prioritization on the Champaign-Urbana area. [Insert Techy Shit]
 
 # CONCLUSION
-We sincerely hope that our efforts to promote and enable every CU citizen's responsibility to protect the environment results in aggregate benefits. Every member of our community has incredible potential to effect positive change as an individual within the collective of their localities. So as we all go through our typical routines, keep in mind that your community would love to C U Recycle. (THAT IS SO FUCKING CRINGY)
+We sincerely hope that our efforts to promote and enable every CU citizen's responsibility to protect the environment results in aggregate benefits. Every member of our community has incredible potential to effect positive change as an individual within the collective of our localities. So as we all go through our typical routines, keep in mind that your community would love to C U Recycle. (THAT IS SO FUCKING CRINGY)

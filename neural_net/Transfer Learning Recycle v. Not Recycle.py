@@ -9,8 +9,8 @@ from keras.callbacks import ModelCheckpoint, LearningRateScheduler, TensorBoard,
 img_width, img_height = 224, 224
 train_data_dir = "dataset/train"
 validation_data_dir = "dataset/val"
-nb_train_samples = 4125
-nb_validation_samples = 466
+#nb_train_samples = 4125
+#nb_validation_samples = 466
 batch_size = 64
 epochs = 15
 unfreeze = 7
@@ -73,10 +73,8 @@ early = EarlyStopping(monitor='val_acc', min_delta=0, patience=3, verbose=1, mod
 # Train the model
 history = model_final.fit_generator(
 train_generator,
-samples_per_epoch = nb_train_samples,
 epochs = epochs,
 validation_data = validation_generator,
-nb_val_samples = nb_validation_samples,
 callbacks = [checkpoint, early])
 
 val_acc = float(history.history["val_acc"][-1])

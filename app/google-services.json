@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "904948560741",
+    "firebase_url": "https://cu-recycle.firebaseio.com",
+    "project_id": "cu-recycle",
+    "storage_bucket": "cu-recycle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904948560741:android:20b7484c947b1ca6",
+        "android_client_info": {
+          "package_name": "com.smapps.cu_recycle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904948560741-b0cf3ngfq39nh2v10441nqn8u2gqe8c7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smapps.cu_recycle",
+            "certificate_hash": "787d46974ece054c07657e976739c7905e8fbe35"
+          }
+        },
+        {
+          "client_id": "904948560741-5v13p6k0ghfrc3n50uoaph9eani5o4cq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsTM9MuPNCDA0duBle6SmImZUvyOE4Nxk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904948560741-5v13p6k0ghfrc3n50uoaph9eani5o4cq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

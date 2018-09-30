@@ -16,7 +16,7 @@
         android:fullBackupContent="true">
         <activity
             android:name=".EntryPage2"
-            android:label="@string/title_activity_entry_page2"
+            android:label="@string/home"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +37,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

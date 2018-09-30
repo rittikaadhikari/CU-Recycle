@@ -9,6 +9,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -26,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -48,14 +50,13 @@ public class EntryPage2 extends AppCompatActivity
 
     interface Service {
         @Multipart
-        @POST("/")
+        @POST("/image/{image}")
         Call<ResponseBody> postImage(@Part MultipartBody.Part image, @Part("name") RequestBody name);
     }
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final String SERVER_PATH = "http://10.195.157.113:5000";
     private String mCurrentPhotoPath;
-    private Bitmap mBitmap;
     private Uri current_image_uri;
     Service service;
 
@@ -63,7 +64,7 @@ public class EntryPage2 extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry_page2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_entry);
+        Toolbar toolbar = findViewById(R.id.toolbar_entry);
         setSupportActionBar(toolbar);
 
         configureNextButton();
@@ -81,7 +82,12 @@ public class EntryPage2 extends AppCompatActivity
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .addInterceptor(interceptor)
+                .build();
 
         // Change base URL to your upload server URL.
         service = new Retrofit.Builder().baseUrl(SERVER_PATH).client(client).build().create(Service.class);
@@ -126,7 +132,7 @@ public class EntryPage2 extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            launchCamera(null);
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -219,29 +225,39 @@ public class EntryPage2 extends AppCompatActivity
                 case REQUEST_IMAGE_CAPTURE:
                     Log.d("EntryPage2", "Image: " + current_image_uri);
 
-//                    android.net.Uri selectedImage = data.getData();
-//                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
-//                    android.database.Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-//                    if (cursor == null)
-//                        return;
-//
-//                    cursor.moveToFirst();
-//
-//                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-//                    String filePath = cursor.getString(columnIndex);
-//                    cursor.close();
+                    Toast.makeText(this, "Analyzing image...", Toast.LENGTH_LONG).show();
 
                     File file = new File(mCurrentPhotoPath);
-
                     RequestBody reqFile = RequestBody.create(MediaType.parse("image/*"), file);
                     MultipartBody.Part body = MultipartBody.Part.createFormData("upload", file.getName(), reqFile);
                     RequestBody name = RequestBody.create(MediaType.parse("text/plain"), "upload_test");
 
                     retrofit2.Call<okhttp3.ResponseBody> req = service.postImage(body, name);
+
                     req.enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                            Toast.makeText(EntryPage2.this, "Response received", Toast.LENGTH_SHORT).show();
+                            String response_msg = "";
+                            try {
+                                if (response.body() != null) {
+                                    response_msg = response.body().string();
+                                    Log.d("EntryPage2", "Response received: " + response_msg);
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                            if(!response_msg.equals("")){
+                                AlertDialog.Builder builder = new AlertDialog.Builder(EntryPage2.this);
+                                builder.setMessage(response_msg).setTitle("Result");
+                                builder.setCancelable(false);
+                                builder.setPositiveButton("OK", null);
+                                builder.create().show();
+                            }
+                            else {
+                                Toast.makeText(EntryPage2.this, "Server Error", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
 
                         @Override
@@ -255,7 +271,5 @@ public class EntryPage2 extends AppCompatActivity
             }
         }
     }
-
-
-
+    
 }

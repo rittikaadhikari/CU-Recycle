@@ -94,4 +94,17 @@
     <string name="communicate">Communicate</string>
     <string name="tools">Tools</string>
     <string name="gallery">Gallery</string>
+    <string name="special">Special</string>
+    <string name="local_recycling">Local Recycling</string>
+    <string name="title_activity_local_recycle">LocalRecycle</string>
+    <string name="free_recycling_drop_off_centers">Free Recycling Drop-Off Centers</string>
+    <string name="illini_recycling">Illini Recycling</string>
+    <string name="_420_paul_ave_champaign_il_61824">420 Paul Ave., Champaign, Il. 61824</string>
+    <string name="_217_356_0648">(217) 356 0648</string>
+    <string name="hours_mon_fri_7_a_m_3_30_p_m_n_sat_7_a_m_12_p_m">Hours: Mon-Fri – 7 a.m. -3:30 p.m.  / Sat – 7 a.m. – 12 p.m.</string>
+    <string name="_217_384_2274">(217) 384 2274</string>
+    <string name="_921_w_saline_ct_urbana_il_61802">921 W. Saline Ct., Urbana Il. 61802</string>
+    <string name="republic_services">Republic Services</string>
+    <string name="hours_mon_fri_9_a_m_4_p_m_n">Hours: Mon-Fri – 9 a.m. – 4 p.m.</string>
+    <string name="champaign_urbana">Champaign/Urbana</string>
 </resources>

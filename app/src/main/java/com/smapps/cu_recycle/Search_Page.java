@@ -1,8 +1,12 @@
 package com.smapps.cu_recycle;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.SearchView;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,16 +16,103 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 public class Search_Page extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
+
+
+    // Declare Variables
+    private ListView list;
+    private ListViewAdapter_Search_Page adapter;
+    private SearchView editsearch;
+//    private String[] moviewList;
+    public static ArrayList<Search_Item> searchItemArrayList = new ArrayList<Search_Item>();
+    FirebaseFirestore db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_search__page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_search);
         setSupportActionBar(toolbar);
+
+//        moviewList = new String[]{"Xmen", "Titanic", "Captain America",
+//                "Iron man", "Rocky", "Transporter", "Lord of the rings", "The jungle book",
+//                "Tarzan","Cars","Shreck"};
+//
+        // Locate the ListView in listview_main.xml
+        list = (ListView) findViewById(R.id.listView1);
+        searchItemArrayList = new ArrayList<>();
+//
+//        for (int i = 0; i < moviewList.length; i++) {
+//            Search_Item movieNames = new Search_Item(moviewList[i], "lol");
+//            // Binds all strings into an array
+//            searchItemArrayList.add(movieNames);
+//        }
+        db = FirebaseFirestore.getInstance();
+        db.collection("Urbana")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("TAG", document.getId() + " => " + document.getData());
+                                Map<String, Object> objectMap = document.getData();
+                                String name = (String)objectMap.get("name");
+                                String type = (String)objectMap.get("type");
+                                Search_Item curr_item = new Search_Item(name, type);
+                                searchItemArrayList.add(curr_item);
+                            }
+                        } else {
+                            Log.w("TAG", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
+
+        // Pass results to ListViewAdapter Class
+        adapter = new ListViewAdapter_Search_Page(this);
+
+        // Binds the Adapter to the ListView
+        list.setAdapter(adapter);
+
+        // Locate the EditText in listview_main.xml
+        editsearch = (SearchView) findViewById(R.id.search_search);
+        editsearch.setOnQueryTextListener(this);
+
+        list.setOnTouchListener(new View.OnTouchListener() {
+            // Setting on Touch Listener for handling the touch inside ScrollView
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                // Disallow the touch request for parent scroll on touch of child view
+                v.getParent().requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(Search_Page.this, searchItemArrayList.get(position).getTypeName(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_search);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -88,5 +179,18 @@ public class Search_Page extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_search);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        adapter.filter(query);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        String text = newText;
+        adapter.filter(text);
+        return false;
     }
 }

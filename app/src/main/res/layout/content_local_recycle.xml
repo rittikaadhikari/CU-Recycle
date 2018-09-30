@@ -18,8 +18,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="0dp"
         android:layout_marginTop="17dp"
-        android:background="@drawable/local"
-        android:text="@string/button" />
+        android:background="@drawable/local" />
 
     <TextView
         android:layout_width="325dp"

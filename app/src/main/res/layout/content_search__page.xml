@@ -66,7 +66,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    android:text="Recycling Procedure"
+                    android:text="@string/recycling_procedure"
                     android:layout_marginTop="5dp"/>
 
                 <ImageButton
@@ -78,20 +78,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    android:text="Beverage Containers"
+                    android:text="@string/food_and_drink_containers"
                     android:layout_marginTop="5dp"/>
 
                 <ImageButton
-                    android:id="@+id/imageButtonMail"
+                    android:id="@+id/imageButtonMilk"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="@drawable/usps"
+                    android:background="@drawable/milk_jug"
                     android:layout_marginTop="15dp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    android:text="Residential Paper"
+                    android:text="@string/plastic_resin_codes"
                     android:layout_marginTop="5dp"/>
+
+
 
             </LinearLayout>
 
@@ -113,31 +115,32 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    android:text="Unacceptable Materials"
+                    android:text="@string/unacceptable_materials"
+                    android:layout_marginTop="5dp"/>
+
+
+                <ImageButton
+                    android:id="@+id/imageButtonMail"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/usps"
+                    android:layout_marginTop="15dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:text="@string/residential_paper"
                     android:layout_marginTop="5dp"/>
 
                 <ImageButton
                     android:id="@+id/imageButtonPaint"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="@drawable/paint"
+                    android:background="@drawable/local"
                     android:layout_marginTop="15dp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
-                    android:text="Food Containers"
-                    android:layout_marginTop="5dp"/>
-
-                <ImageButton
-                    android:id="@+id/imageButtonMilk"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:background="@drawable/milk_jug"
-                    android:layout_marginTop="15dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:text="Plastic Resin Codes"
+                    android:text="@string/local_recycling"
                     android:layout_marginTop="5dp"/>
 
             </LinearLayout>

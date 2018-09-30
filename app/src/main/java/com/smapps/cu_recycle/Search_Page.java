@@ -127,7 +127,7 @@ public class Search_Page extends AppCompatActivity
         beverage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Search_Page.this, BeverageContainer.class));
+                startActivity(new Intent(Search_Page.this, FoodContainers.class));
             }
         });
 
@@ -135,7 +135,7 @@ public class Search_Page extends AppCompatActivity
         food_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Search_Page.this, FoodContainers.class));
+                startActivity(new Intent(Search_Page.this, LocalRecycle.class));
             }
         });
 

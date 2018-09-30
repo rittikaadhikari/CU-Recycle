@@ -65,6 +65,10 @@
             android:name=".ResidentialPaper"
             android:label="@string/title_activity_residential_paper"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LocalRecycle"
+            android:label="@string/title_activity_local_recycle"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -40,6 +40,11 @@
                 android:layout_height="120dp"
                 android:background="@drawable/blue_bin"
                 android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Recycling Procedure"
+                android:layout_marginTop="5dp"/>
 
             <ImageButton
                 android:id="@+id/imageButtonCan"
@@ -47,6 +52,11 @@
                 android:layout_height="120dp"
                 android:background="@drawable/cans"
                 android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Beverage Containers"
+                android:layout_marginTop="5dp"/>
 
             <ImageButton
                 android:id="@+id/imageButtonMail"
@@ -54,6 +64,11 @@
                 android:layout_height="120dp"
                 android:background="@drawable/usps"
                 android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Residential Paper"
+                android:layout_marginTop="5dp"/>
 
         </LinearLayout>
 
@@ -72,6 +87,11 @@
                 android:layout_height="120dp"
                 android:background="@drawable/plastic_bag"
                 android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Unacceptable Materials"
+                android:layout_marginTop="5dp"/>
 
             <ImageButton
                 android:id="@+id/imageButtonPaint"
@@ -79,6 +99,11 @@
                 android:layout_height="120dp"
                 android:background="@drawable/paint"
                 android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Food Containers"
+                android:layout_marginTop="5dp"/>
 
             <ImageButton
                 android:id="@+id/imageButtonMilk"
@@ -86,6 +111,11 @@
                 android:layout_height="120dp"
                 android:background="@drawable/milk_jug"
                 android:layout_marginTop="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Plastic Resin Codes"
+                android:layout_marginTop="5dp"/>
 
         </LinearLayout>
     </LinearLayout>

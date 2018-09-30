@@ -7,6 +7,16 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="home">Home</string>
+    <string name="recycling_guidelines">Recycling Guidelines</string>
+    <string name="identify">Identify</string>
+    <string name="photo">Photo</string>
+    <string name="manual_entry">Manual Entry</string>
+    <string name="urbana">Urbana</string>
+    <string name="champaign">Champaign</string>
+    <string name="location">Location</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_food_containers">FoodContainers</string>
     <string name="cu_recycle">
         CU-Recycle
     </string>

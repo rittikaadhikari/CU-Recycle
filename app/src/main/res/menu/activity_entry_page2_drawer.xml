@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/guidelines"
+            android:icon="@drawable/ic_menu_recycle"
+            android:title="@string/recycling_guidelines" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/identify">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_camera"
+                android:icon="@drawable/ic_menu_cam"
+                android:title="@string/photo" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_manual_entry"
+                android:icon="@drawable/ic_menu_text"
+                android:title="@string/manual_entry" />
+        </menu>
+    </item>
+
+    <item android:title="@string/location">
+        <menu>
+            <item
+                android:id="@+id/nav_Location_Champaign"
+                android:icon="@drawable/ic_menu_Champaign"
+                android:title="@string/champaign" />
+            <item
+                android:id="@+id/nav_Location_Urbana"
+                android:icon="@drawable/ic_menu_Urbana"
+                android:title="@string/urbana" />
         </menu>
     </item>
 

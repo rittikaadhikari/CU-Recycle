@@ -29,8 +29,8 @@ public class RecyclingProcedure extends AppCompatActivity
 //        drawer.addDrawerListener(toggle);
 //        toggle.syncState();
 //
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_procedure);
-//        navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_procedure);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override

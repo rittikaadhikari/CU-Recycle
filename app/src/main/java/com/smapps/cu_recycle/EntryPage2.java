@@ -77,11 +77,8 @@ public class EntryPage2 extends AppCompatActivity
 //        drawer.addDrawerListener(toggle);
 //        toggle.syncState();
 //        drawer.removeAllViews();
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_entry);
-//        navigationView.setEnabled(false);
-//        navigationView.setVisibility(View.GONE);
-//        navigationView.removeAllViews();
-//        navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_entry);
+        navigationView.setNavigationItemSelectedListener(this);
 
         deleteImages();
 

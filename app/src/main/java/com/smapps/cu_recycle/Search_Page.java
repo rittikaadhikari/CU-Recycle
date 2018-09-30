@@ -177,8 +177,8 @@ public class Search_Page extends AppCompatActivity
 //        drawer.addDrawerListener(toggle);
 //        toggle.syncState();
 //
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_search);
-//        navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_search);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -220,15 +220,16 @@ public class Search_Page extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.home) {
+            Intent intent = new Intent(this, EntryPage2.class);
+            startActivity(intent);
         } else if (id == R.id.nav_send) {
 
         }

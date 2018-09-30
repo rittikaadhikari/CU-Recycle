@@ -14,9 +14,20 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         android:fullBackupContent="true">
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.smapps.cu_recycle.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <activity
             android:name=".EntryPage2"
-            android:label="@string/home"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,17 +40,6 @@
             android:label="@string/title_activity_search__page"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.smapps.cu_recycle.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".BeverageContainer"
             android:label="@string/title_activity_beverage_container"
@@ -59,7 +59,7 @@
         <activity
             android:name=".ResidentialPaper"
             android:label="@string/title_activity_residential_paper"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

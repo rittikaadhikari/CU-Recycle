@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.MediaType;
@@ -66,6 +67,7 @@ public class EntryPage2 extends AppCompatActivity
         setContentView(R.layout.activity_entry_page2);
         Toolbar toolbar = findViewById(R.id.toolbar_entry);
         setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Home");
 
         configureNextButton();
 

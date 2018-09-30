@@ -1,5 +1,7 @@
 package com.smapps.cu_recycle;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +19,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -42,6 +45,12 @@ public class Search_Page extends AppCompatActivity
 //    private String[] moviewList;
     public static ArrayList<Search_Item> searchItemArrayList = new ArrayList<Search_Item>();
     FirebaseFirestore db;
+    private ImageButton beverage;
+    private ImageButton food_container;
+    private ImageButton residential_paper;
+    private ImageButton resin_codes;
+    private ImageButton unacceptable;
+    private ImageButton recycling;
 
 
     @Override
@@ -111,6 +120,54 @@ public class Search_Page extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(Search_Page.this, searchItemArrayList.get(position).getTypeName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        beverage = (ImageButton) findViewById(R.id.imageButtonCan);
+        beverage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Search_Page.this, BeverageContainer.class));
+            }
+        });
+
+        food_container = (ImageButton) findViewById(R.id.imageButtonPaint);
+        food_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Search_Page.this, FoodContainers.class));
+            }
+        });
+
+        recycling = (ImageButton) findViewById(R.id.imageButtonBin);
+        recycling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Search_Page.this, RecyclingProcedure.class));
+            }
+        });
+
+        residential_paper = (ImageButton) findViewById(R.id.imageButtonMail);
+        residential_paper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Search_Page.this, ResidentialPaper.class));
+            }
+        });
+
+        resin_codes = (ImageButton) findViewById(R.id.imageButtonMilk);
+        beverage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Search_Page.this, ResinCodes.class));
+            }
+        });
+
+        unacceptable = (ImageButton) findViewById(R.id.imageButtonBag);
+        unacceptable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Search_Page.this, UnacceptableMaterial.class));
             }
         });
 

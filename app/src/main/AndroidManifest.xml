@@ -29,6 +29,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Search_Page"
+            android:label="@string/title_activity_search__page"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

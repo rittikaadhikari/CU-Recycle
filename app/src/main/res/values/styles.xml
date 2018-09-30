@@ -29,6 +29,7 @@
 
 
     </style>
+
     <style name="a">
 
         <item name="android:textSize">
@@ -40,6 +41,7 @@
         </item>
 
     </style>
+
     <style name="manual_inpu">
 
         <item name="android:textSize">

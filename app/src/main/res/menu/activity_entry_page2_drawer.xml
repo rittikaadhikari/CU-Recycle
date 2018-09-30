@@ -28,16 +28,12 @@
         </menu>
     </item>
 
-    <item android:title="@string/location">
+    <item android:title="@string/local_recycling">
         <menu>
             <item
                 android:id="@+id/nav_Location_Champaign"
-                android:icon="@drawable/ic_menu_champaign"
-                android:title="@string/champaign" />
-            <item
-                android:id="@+id/nav_Location_Urbana"
-                android:icon="@drawable/ic_menu_urbana"
-                android:title="@string/urbana" />
+                android:icon="@drawable/ic_action_place"
+                android:title="@string/champaign_urbana" />
         </menu>
     </item>
 

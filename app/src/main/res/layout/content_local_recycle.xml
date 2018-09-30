@@ -5,81 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="15dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ResidentialPaper"
-    tools:showIn="@layout/app_bar_residential_paper">
+    tools:context=".LocalRecycle"
+    tools:showIn="@layout/app_bar_local_recycle">
+
 
     <Button
         android:id="@+id/button"
         android:layout_width="325dp"
-        android:layout_height="220dp"
+        android:layout_height="223dp"
         android:layout_gravity="center"
         android:layout_marginStart="0dp"
         android:layout_marginTop="17dp"
-        android:background="@drawable/usps"
-        android:text="" />
+        android:background="@drawable/local"
+        android:text="@string/button" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="65dp"
         android:layout_marginStart="45dp"
         android:gravity="center"
-        android:text="@string/recycling_procedures"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        android:text="@string/free_recycling_drop_off_centers"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"/>
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:text="@string/any_paper_that_is_written_upon_read_from_or_used_for_packaging_including" />
+        android:gravity="center"
+        android:text="@string/illini_recycling"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:text="@string/newspaper_and_inserts" />
+        android:gravity="center"
+        android:text="@string/_420_paul_ave_champaign_il_61824" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:text="@string/cardboard" />
+        android:gravity="center"
+        android:text="@string/_217_356_0648" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:text="@string/paperboard" />
+        android:gravity="center"
+        android:text="@string/hours_mon_fri_9_a_m_4_p_m_n" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:text="@string/junk_mail" />
+        android:gravity="center"
+        android:text="@string/republic_services"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:text="@string/ledgers_file_folders_or_computer_paper" />
+        android:gravity="center"
+        android:text="@string/_921_w_saline_ct_urbana_il_61802" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:text="@string/magazines_catalogs_phone_directories" />
+        android:gravity="center"
+        android:text="@string/_217_384_2274" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:text="@string/paperback_hardcover_books_please_limit_to_20_lbs_per_setout" />
-
-    <TextView
-        android:layout_width="325dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:text="@string/shredded_paper_must_be_placed_in_paper_grocery_bag_only_may_staple_bag_to_contain_paper" />
+        android:gravity="center"
+        android:text="@string/hours_mon_fri_7_a_m_3_30_p_m_n_sat_7_a_m_12_p_m" />
 
 </LinearLayout>

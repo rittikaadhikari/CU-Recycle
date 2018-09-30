@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="0dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".FoodContainers"
     tools:showIn="@layout/app_bar_food_containers">
@@ -16,35 +16,31 @@
         android:layout_height="223dp"
         android:layout_gravity="center"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/food"
         android:text="@string/button" />
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="325dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginStart="45dp"
         android:gravity="center"
         android:text="@string/food_containers"
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:text="@string/aluminum_cans_and_foil_clean" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:text="@string/steel_cans" />
 
     <TextView
-        android:id="@+id/textView4"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"

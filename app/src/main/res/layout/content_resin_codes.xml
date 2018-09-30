@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:orientation="vertical"
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="20dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ResinCodes"
     tools:showIn="@layout/app_bar_resin_codes">
@@ -23,7 +23,7 @@
 
     <TextView
         android:layout_width="325dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginStart="45dp"
         android:gravity="center"
         android:text="@string/plastic_resin_codes"

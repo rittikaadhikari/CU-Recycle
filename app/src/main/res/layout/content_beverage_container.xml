@@ -21,8 +21,8 @@
 
     <TextView
         android:layout_width="325dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="30dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="45dp"
         android:gravity="center"
         android:text="@string/beverage_containers"
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
@@ -30,37 +30,37 @@
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="45dp"
         android:text="@string/aluminum_cans_clean" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="45dp"
         android:text="@string/steel_cans" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="45dp"
         android:text="@string/aerosol_cans_empty_except_paint_cans" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="45dp"
         android:text="@string/glass_bottles_and_jars_all_colors_accepted" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="45dp"
         android:text="@string/six_pack_ring_carriers" />
 
     <TextView
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="45dp"
         android:text="@string/beverage_cartons" />
 
 </LinearLayout>

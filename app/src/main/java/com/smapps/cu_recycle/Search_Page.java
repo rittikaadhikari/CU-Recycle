@@ -156,7 +156,7 @@ public class Search_Page extends AppCompatActivity
         });
 
         resin_codes = (ImageButton) findViewById(R.id.imageButtonMilk);
-        beverage.setOnClickListener(new View.OnClickListener() {
+        resin_codes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Search_Page.this, ResinCodes.class));

@@ -12,6 +12,7 @@ args = ap.parse_args()
 for(dirpath, dirnames, filenames) in os.walk(args.dir):
     for f in filenames:
         img_path = dirpath + "/" + f
+        # print(img_path)
         img = cv2.imread(img_path)
         resized_image = cv2.resize(img, (args.row, args.col))
         cv2.imwrite(img_path, resized_image)

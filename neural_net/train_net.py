@@ -1,17 +1,14 @@
 import keras
 import numpy as np
-from keras import backend as K
 from keras.models import Sequential
 from keras.engine import InputLayer
 from keras.layers import Activation
 from keras.layers.core import Dense, Flatten, Dropout
 from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator
-from keras.layers.normalization import BatchNormalization
 from keras.layers.convolutional import *
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from matplotlib import pyplot as plt
-import itertools
 import os
 from collections import Counter
 import argparse
@@ -22,9 +19,9 @@ valid_path = 'dataset/val'
 
 ap = argparse.ArgumentParser()
 ap.add_argument('--verbose', action='store_true', help='verbose output')
-ap.add_argument('--epochs', type=int, default=5)
+ap.add_argument('--epochs', type=int, default=2)
 ap.add_argument('--batch_size', type=int, default=15)
-ap.add_argument('--unfreeze', type=int, help="number of layers to unfreeze, max = 25", default=5)
+ap.add_argument('--unfreeze', type=int, help="number of layers to unfreeze, max = 16", default=2)
 args = ap.parse_args()
 
 train_datagen = ImageDataGenerator(rotation_range=5,
@@ -51,14 +48,14 @@ model.add(Dropout(.5))
 model.add(Dense(2, activation='sigmoid'))
 
 num_layers = len(model.layers)
-frozen_count = 0
-for layer in model.layers:
-    if frozen_count < num_layers - args.unfreeze:
-        layer.trainable = False
-        frozen_count += 1
+for layer in model.layers[:args.unfreeze]:
+    layer.trainable = False
+
+try:
+    os.remove('vgg16_1.h5')
+except: print("Warning file not found")
 
 if(args.verbose):
-    #DEBUG:look at model
     model.summary()
     print("number of layers="+str(num_layers))
     print("number of frozen="+str(num_layers - args.unfreeze))
@@ -73,10 +70,11 @@ max_val = float(max(counter.values()))
 class_weights = {class_id : max_val/num_images for class_id, num_images in counter.items()}
 
 checkpoint = ModelCheckpoint("vgg16_1.h5", monitor='val_acc', verbose=True, save_best_only=True, save_weights_only=False, mode='auto', period=True)
-early = EarlyStopping(monitor='val_acc', min_delta=0, patience=5, verbose=1, mode='auto')
+early = EarlyStopping(monitor='val_acc', min_delta=0, patience=20, verbose=1, mode='auto')
 
-steps = 1673 // args.batch_size
-history = model.fit_generator(train_generator, steps_per_epoch=steps, validation_data=valid_batches, validation_steps=109, epochs=args.epochs, verbose=1, class_weight=class_weights, callbacks = [checkpoint, early])
+# steps = 1642 // args.batch_size  steps_per_epoch=steps,
+history = model.fit_generator(train_generator, validation_data=valid_batches, validation_steps=109,
+                              epochs=args.epochs, verbose=1, class_weight=class_weights, callbacks = [checkpoint, early])
 
 val_acc = float(history.history["val_acc"][-1])
 val_acc = "{0:.3f}".format(val_acc)

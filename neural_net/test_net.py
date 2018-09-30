@@ -1,5 +1,6 @@
 import keras
 from keras.models import load_model
+from keras import optimizers
 import argparse
 import os
 import cv2
@@ -32,7 +33,7 @@ for(dirpath, dirnames, filenames) in os.walk(args.dir):
         class_val_dict["trash"] = "{0:.3f}".format(prediction[0][0])
         class_val_dict["recycle"] = "{0:.3f}".format(prediction[0][1])
         if class_val_dict[class_str] != max(class_val_dict["trash"], class_val_dict["recycle"]):
-            print("Incorrect " + class_str + ": " + f)
+            print("Incorrect " + class_str + ": " + f, prediction[0])
             inc_predictions_count[class_index_dict[class_str]] += 1
 
 print("--------")

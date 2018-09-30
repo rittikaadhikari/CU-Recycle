@@ -7,8 +7,8 @@
     android:orientation="vertical"
     android:layout_marginTop="40dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".FoodContainers"
-    tools:showIn="@layout/app_bar_food_containers">
+    tools:context=".BeverageContainer"
+    tools:showIn="@layout/app_bar_beverage_container">
 
     <Button
         android:id="@+id/button"
@@ -17,37 +17,54 @@
         android:layout_gravity="center"
         android:layout_marginStart="0dp"
         android:layout_marginTop="17dp"
-        android:background="@drawable/food"
-        android:text="@string/button" />
+        android:background="@drawable/drink" />
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="325dp"
         android:layout_height="45dp"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="30dp"
         android:gravity="center"
-        android:text="@string/food_containers"
+        android:text="@string/beverage_containers"
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:text="@string/aluminum_cans_and_foil_clean" />
+        android:layout_marginStart="30dp"
+        android:text="@string/aluminum_cans_clean" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="30dp"
         android:text="@string/steel_cans" />
 
     <TextView
-        android:id="@+id/textView4"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:text="@string/glass_bottles_amp_jars_all_colors_accepted_plastic_shopping_bags_grocery_and_retail_only_must_have_a_2_or_4_on_bag_bags_must_be_clean_dry_and_bundled_separately_from_other_recyclables_into_one_retail_bag_no_garbage_bags_accepted" />
+        android:layout_marginStart="30dp"
+        android:text="@string/aerosol_cans_empty_except_paint_cans" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/glass_bottles_and_jars_all_colors_accepted" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/six_pack_ring_carriers" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/beverage_cartons" />
 
 </LinearLayout>
+
+
+
+

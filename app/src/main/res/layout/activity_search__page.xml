@@ -20,6 +20,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_search__page"
-        app:menu="@menu/activity_search__page_drawer" />
+        app:menu="@menu/activity_entry_page2_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

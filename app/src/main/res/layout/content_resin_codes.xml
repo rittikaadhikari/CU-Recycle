@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:layout_marginTop="40dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ResinCodes"
+    tools:showIn="@layout/app_bar_resin_codes">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="325dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/resin"
+        android:text="" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="45dp"
+        android:gravity="center"
+        android:text="@string/plastic_resin_codes"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/_1_pete_polyethylene_terephthalate_soft_drink_water_bottles_or_food_containers" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/_2_hdpe_high_density_polyethylene_milk_jugs_detergent_bottles_shopping_bags_bundled" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/_3_v_polyvinyl_chloride_health_beauty_aide_products_cooking_oil_bottles_and_household_cleaners" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/_4_ldpe_low_density_polyethylene_margarine_tubs_lids_frozen_dessert_cups_six_pack_rings_shopping_bags_bundled" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/_5_pp_polypropylene_yogurt_cups_syrup_bottles_deli_trays_plant_pots_and_caps_lids_plant_pots_must_be_rinsed_free_of_dirt" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/_6_ps_polystyrene_rigid_6_plastics_only_such_as_to_go_coffee_lids_bakery_containers_no_styrofoam" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/_7_other_other_resins_microwaveable_containers_and_narrow_neck_bottles" />
+
+    </LinearLayout>

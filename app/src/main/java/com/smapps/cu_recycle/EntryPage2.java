@@ -71,14 +71,17 @@ public class EntryPage2 extends AppCompatActivity
 
         configureNextButton();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_entry);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_entry);
-        navigationView.setNavigationItemSelectedListener(this);
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_entry);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
+//        drawer.removeAllViews();
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_entry);
+//        navigationView.setEnabled(false);
+//        navigationView.setVisibility(View.GONE);
+//        navigationView.removeAllViews();
+//        navigationView.setNavigationItemSelectedListener(this);
 
         deleteImages();
 

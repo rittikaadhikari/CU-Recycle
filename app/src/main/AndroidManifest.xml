@@ -38,7 +38,8 @@
         <activity
             android:name=".Search_Page"
             android:label="@string/title_activity_search__page"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="com.smapps.cu_recycle.EntryPage2" >
         </activity>
         <activity
             android:name=".BeverageContainer"

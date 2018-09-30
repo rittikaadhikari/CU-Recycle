@@ -32,11 +32,11 @@
         <menu>
             <item
                 android:id="@+id/nav_Location_Champaign"
-                android:icon="@drawable/ic_menu_Champaign"
+                android:icon="@drawable/ic_menu_champaign"
                 android:title="@string/champaign" />
             <item
                 android:id="@+id/nav_Location_Urbana"
-                android:icon="@drawable/ic_menu_Urbana"
+                android:icon="@drawable/ic_menu_urbana"
                 android:title="@string/urbana" />
         </menu>
     </item>

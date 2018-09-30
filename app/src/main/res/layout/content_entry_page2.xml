@@ -68,7 +68,7 @@
             android:background="#00000000">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/manualButton"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
@@ -77,8 +77,8 @@
                 android:layout_marginBottom="0dp"
                 android:background="@drawable/button2" />
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageButton
+                android:id="@+id/photoButton"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"

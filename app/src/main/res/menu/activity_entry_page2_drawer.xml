@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/guidelines"
+            android:icon="@drawable/ic_menu_recycle"
+            android:title="@string/recycling_guidelines" />
+    </group>
+
+    <item android:title="@string/identify">
+        <menu>
+            <item
+                android:id="@+id/nav_camera"
+                android:icon="@drawable/ic_menu_cam"
+                android:title="@string/photo" />
+            <item
+                android:id="@+id/nav_manual_entry"
+                android:icon="@drawable/ic_menu_text"
+                android:title="@string/manual_entry" />
+        </menu>
+    </item>
+
+    <item android:title="@string/location">
+        <menu>
+            <item
+                android:id="@+id/nav_Location_Champaign"
+                android:icon="@drawable/ic_menu_champaign"
+                android:title="@string/champaign" />
+            <item
+                android:id="@+id/nav_Location_Urbana"
+                android:icon="@drawable/ic_menu_urbana"
+                android:title="@string/urbana" />
+        </menu>
+    </item>
+
+</menu>

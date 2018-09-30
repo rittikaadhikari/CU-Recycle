@@ -1,4 +1,33 @@
 <resources>
     <string name="app_name">CU-Recycle</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_entry_page2">EntryPage2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="home">Home</string>
+    <string name="recycling_guidelines">Recycling Guidelines</string>
+    <string name="identify">Identify</string>
+    <string name="photo">Photo</string>
+    <string name="manual_entry">Manual Entry</string>
+    <string name="urbana">Urbana</string>
+    <string name="champaign">Champaign</string>
+    <string name="location">Location</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_food_containers">FoodContainers</string>
+    <string name="cu_recycle">
+        CU-Recycle
+    </string>
+    <string name="a">
+        Interactive Recycling Assistant\nfor Champaign-Urbana
+    </string>
+    <string name="manual_inpu">
+        Manual Input
+</string>
+    <string name="take_a_phot">
+        Take a Photo
+</string>
+    <string name="title_activity_search__page">Search_Page</string>
 </resources>

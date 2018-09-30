@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:layout_marginTop="40dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".UnacceptableMaterial"
+    tools:showIn="@layout/app_bar_unacceptable_material">
+
+    <!--<Button-->
+    <!--android:id="@+id/button"-->
+    <!--android:layout_width="325dp"-->
+    <!--android:layout_height="75"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_marginStart="0dp"-->
+    <!--android:layout_marginTop="17dp"-->
+    <!--android:background="@drawable/resin"-->
+    <!--android:text="" />-->
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:gravity="center"
+        android:text="@string/unacceptable_material"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_garbage_bags_keep_materials_loose_in_u_cart" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_food_waste_organics" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_plastic_film_such_as_ziploc_bags_bread_bags_newspaper_sleeves_wrappers_chip_bags_candy_fast_food_etc" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_styrofoam_foam_products_such_as_egg_cartons_deli_or_meat_trays_packaging_peanuts" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_scrap_metal_or_wood" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_single_use_paper_products_paper_towel_tissue_paper_cups_plates" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_plastic_cutlery" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_food_soiled_boxes" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_hazardous_waste_i_e_motor_oil_pesticide_containers_paint_batteries_etc" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_toys" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_ceramics_mirrors" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_gift_wrap_ribbon_bows" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_textiles_shoes" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/no_medical_waste" />
+
+    </LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="40dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FoodContainers"
+    tools:showIn="@layout/app_bar_recycling_procedure">
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="325dp"
+        android:layout_height="223dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/procedure"
+        android:text="" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="45dp"
+        android:gravity="center"
+        android:text="@string/recycling_procedures"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/please_take_a_moment_to" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/rinse_all_containers" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/caps_lids_can_be_recycled_may_be_left_on_bottle_or_container_once_rinsed" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/remove_food_box_liners_or_plastic_film" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/flatten_all_boxes" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/cut_large_cardboard_to_less_than_2_x_3" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/keep_paper_fibers_dry" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/keep_materials_loose_in_the_u_cart_please_don_t_bag_recyclables_in_garbage_bags" />
+
+    </LinearLayout>

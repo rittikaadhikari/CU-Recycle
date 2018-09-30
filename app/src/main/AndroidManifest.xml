@@ -32,6 +32,26 @@
         <activity
             android:name=".Search_Page"
             android:label="@string/title_activity_search__page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BeverageContainer"
+            android:label="@string/title_activity_beverage_container"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UnacceptableMaterial"
+            android:label="@string/title_activity_unacceptable_material"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ResinCodes"
+            android:label="@string/title_activity_resin_codes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RecyclingProcedure"
+            android:label="@string/recycling_procedures"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ResidentialPaper"
+            android:label="@string/title_activity_residential_paper"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

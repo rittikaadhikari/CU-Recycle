@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="40dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ResidentialPaper"
+    tools:showIn="@layout/app_bar_residential_paper">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="325dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/usps"
+        android:text="" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="45dp"
+        android:gravity="center"
+        android:text="@string/recycling_procedures"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/any_paper_that_is_written_upon_read_from_or_used_for_packaging_including" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/newspaper_and_inserts" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/cardboard" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/paperboard" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/junk_mail" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/ledgers_file_folders_or_computer_paper" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/magazines_catalogs_phone_directories" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/paperback_hardcover_books_please_limit_to_20_lbs_per_setout" />
+
+    <TextView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/shredded_paper_must_be_placed_in_paper_grocery_bag_only_may_staple_bag_to_contain_paper" />
+
+</LinearLayout>

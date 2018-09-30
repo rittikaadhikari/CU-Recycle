@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 global graph
 graph = tf.get_default_graph()
-model = load_model('official_model.h5') 
+model = load_model('../neural_net/official_model.h5')
 
 # GET/POST
 @app.route('/image/<image>', methods=['GET','POST'])

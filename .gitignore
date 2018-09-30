@@ -1,4 +1,5 @@
 *.h5
+server/image.jpg
 *.iml
 .gradle
 /local.properties

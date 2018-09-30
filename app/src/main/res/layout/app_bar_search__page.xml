@@ -18,13 +18,6 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimaryDark">
 
-        <SearchView
-            android:id="@+id/search_search"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:queryHint="What Object Do You have?"
-
-            ></SearchView>
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 

@@ -95,7 +95,6 @@
     <string name="tools">Tools</string>
     <string name="gallery">Gallery</string>
     <string name="special">Special</string>
-    <string name="local_recycling">Local Recycling</string>
     <string name="title_activity_local_recycle">LocalRecycle</string>
     <string name="free_recycling_drop_off_centers">Free Recycling Drop-Off Centers</string>
     <string name="illini_recycling">Illini Recycling</string>
@@ -107,4 +106,10 @@
     <string name="republic_services">Republic Services</string>
     <string name="hours_mon_fri_9_a_m_4_p_m_n">Hours: Mon-Fri – 9 a.m. – 4 p.m.</string>
     <string name="champaign_urbana">Champaign/Urbana</string>
+    <string name="food_and_beverage_containers">Food and Beverage Containers</string>
+    <string name="recycling_procedure">Recycling Procedure</string>
+    <string name="food_and_drink_containers">Food and Drink Containers</string>
+    <string name="unacceptable_materials">Unacceptable Materials</string>
+    <string name="residential_paper">Residential Paper</string>
+    <string name="local_recycling">Local Recycling</string>
 </resources>

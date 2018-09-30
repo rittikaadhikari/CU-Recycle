@@ -9,13 +9,6 @@
     tools:showIn="@layout/app_bar_search__page"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal">
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,6 +16,7 @@
         android:layout_marginEnd="0dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
+        android:layout_marginTop="50dp"
         android:weightSum="1.0">
 
         <LinearLayout
@@ -42,7 +36,7 @@
                 android:layout_marginTop="15dp"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:text="Recycling Procedure"
                 android:layout_marginTop="5dp"/>
 
@@ -54,7 +48,7 @@
                 android:layout_marginTop="15dp"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:text="Beverage Containers"
                 android:layout_marginTop="5dp"/>
 
@@ -66,7 +60,7 @@
                 android:layout_marginTop="15dp"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:text="Residential Paper"
                 android:layout_marginTop="5dp"/>
 
@@ -89,7 +83,7 @@
                 android:layout_marginTop="15dp"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:text="Unacceptable Materials"
                 android:layout_marginTop="5dp"/>
 
@@ -101,7 +95,7 @@
                 android:layout_marginTop="15dp"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:text="Food Containers"
                 android:layout_marginTop="5dp"/>
 
@@ -113,7 +107,7 @@
                 android:layout_marginTop="15dp"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:text="Plastic Resin Codes"
                 android:layout_marginTop="5dp"/>
 

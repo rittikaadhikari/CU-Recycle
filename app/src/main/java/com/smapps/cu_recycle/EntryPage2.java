@@ -56,7 +56,7 @@ public class EntryPage2 extends AppCompatActivity
     }
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
-    private static final String SERVER_PATH = "http://10.195.244.149:5000";
+    private static final String SERVER_PATH = "http://192.168.86.90:5000";
     private String mCurrentPhotoPath;
     private Uri current_image_uri;
     Service service;

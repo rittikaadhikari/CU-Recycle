@@ -14,6 +14,7 @@ args = ap.parse_args()
 
 
 model = load_model(args.model)
+print(model.summary())
 print("Model loaded.")
 total_predictions_count = [0, 0]
 inc_predictions_count = [0, 0]

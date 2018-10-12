@@ -6,8 +6,8 @@ android {
         applicationId "com.smapps.cu_recycle"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.1"
+        versionCode 4
+        versionName "1.12"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -29,9 +29,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-database:16.0.2'
     implementation 'com.google.firebase:firebase-firestore:17.1.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'org.tensorflow:tensorflow-lite:+'
 }
 
 apply plugin: 'com.google.gms.google-services'

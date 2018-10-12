@@ -1,4 +1,9 @@
 *.h5
+*.pb
+*.tflite
+*.zip
+neural_net/dataset
+nerual_net/actual_images
 server/image.jpg
 *.iml
 .gradle

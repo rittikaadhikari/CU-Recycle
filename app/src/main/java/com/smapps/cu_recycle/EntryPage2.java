@@ -2,8 +2,12 @@ package com.smapps.cu_recycle;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -23,43 +27,31 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.android.vending.expansion.zipfile.APKExpansionSupport;
+import com.android.vending.expansion.zipfile.ZipResourceFile;
+
+import org.tensorflow.lite.Interpreter;
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.http.Multipart;
-import retrofit2.http.POST;
-import retrofit2.http.Part;
 
 
 
 public class EntryPage2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    interface Service {
-        @Multipart
-        @POST("/image/{image}")
-        Call<ResponseBody> postImage(@Part MultipartBody.Part image, @Part("name") RequestBody name);
-    }
-
     private static final int REQUEST_IMAGE_CAPTURE = 1;
-    private static final String SERVER_PATH = "http://192.168.86.90:5000";
     private String mCurrentPhotoPath;
+    private static float[] prediction = new float[2];
     private Uri current_image_uri;
-    Service service;
+    private static AlertDialog.Builder builder;
+    private static Interpreter tflite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,18 +73,29 @@ public class EntryPage2 extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         deleteImages();
+        builder = new AlertDialog.Builder(EntryPage2.this);
+        ZipResourceFile expansionFile = null;
+        try {
+            expansionFile = APKExpansionSupport.getAPKExpansionZipFile(this, 4, 0);
+            Log.d("expansion", "loaded expansion file");
+            AssetFileDescriptor afd = expansionFile.getAssetFileDescriptor("official_model.tflite");
+            FileInputStream inputStream = new FileInputStream(afd.getFileDescriptor());
+            FileChannel fileChannel = inputStream.getChannel();
+            long startOffset = afd.getStartOffset();
+            long declaredLength = afd.getDeclaredLength();
+            tflite = null;
+            try {
+                MappedByteBuffer model_mapped_buffer = fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
+                tflite = new Interpreter(model_mapped_buffer);
+                Log.d("TensorFlow", "Loaded Model");
+            } catch (IOException e) {
+                Log.w("TensorFlow", "Failed to load model", e);
+            }
 
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder()
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(10, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
-                .addInterceptor(interceptor)
-                .build();
+        } catch (IOException e) {
+            Log.w("expansion", "Failed to find expansion file", e);
+        }
 
-        // Change base URL to your upload server URL.
-        service = new Retrofit.Builder().baseUrl(SERVER_PATH).client(client).build().create(Service.class);
     }
 
     @Override
@@ -218,6 +221,21 @@ public class EntryPage2 extends AppCompatActivity
         }
     }
 
+    public static float[][][][] getMat(Bitmap bitmap){
+        final int IMAGE_SIZE = bitmap.getWidth();
+        float[][][][] input_array = new float[1][IMAGE_SIZE][IMAGE_SIZE][3];
+        for(int r = 0; r < IMAGE_SIZE; r++){
+            for(int c = 0; c < IMAGE_SIZE; c++){
+                int pixel = bitmap.getPixel(r, c);
+                input_array[0][r][c][0] = Color.blue(pixel);
+                input_array[0][r][c][1] = Color.green(pixel);
+                input_array[0][r][c][2] = Color.red(pixel);
+            }
+
+        }
+        return input_array;
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data); //constructor
@@ -226,52 +244,49 @@ public class EntryPage2 extends AppCompatActivity
             switch (requestCode) {
                 case REQUEST_IMAGE_CAPTURE:
                     Log.d("EntryPage2", "Image: " + current_image_uri);
-
-                    Toast.makeText(this, "Analyzing image...", Toast.LENGTH_LONG).show();
-
                     File file = new File(mCurrentPhotoPath);
-                    RequestBody reqFile = RequestBody.create(MediaType.parse("image/*"), file);
-                    MultipartBody.Part body = MultipartBody.Part.createFormData("upload", file.getName(), reqFile);
-                    RequestBody name = RequestBody.create(MediaType.parse("text/plain"), "upload_test");
+                    Bitmap photoBitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+                    Bitmap resizedBitmap = Bitmap.createScaledBitmap(photoBitmap, 224, 224, false);
 
-                    retrofit2.Call<okhttp3.ResponseBody> req = service.postImage(body, name);
-
-                    req.enqueue(new Callback<ResponseBody>() {
-                        @Override
-                        public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                            String response_msg = "";
-                            try {
-                                if (response.body() != null) {
-                                    response_msg = response.body().string();
-                                    Log.d("EntryPage2", "Response received: " + response_msg);
-                                }
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-
-                            if(!response_msg.equals("")){
-                                AlertDialog.Builder builder = new AlertDialog.Builder(EntryPage2.this);
-                                builder.setMessage(response_msg).setTitle("Result");
-                                builder.setCancelable(false);
-                                builder.setPositiveButton("OK", null);
-                                builder.create().show();
-                            }
-                            else {
-                                Toast.makeText(EntryPage2.this, "Server Error", Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-
-                        @Override
-                        public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
-                            t.printStackTrace();
-                        }
-                    });
+                    predict(resizedBitmap);
+                    Toast.makeText(this, "Running Model...", Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     break;
             }
         }
+    }
+
+
+    public static void predict(final Bitmap bitmap){
+        //Runs inference in background thread
+        new AsyncTask<Integer,Integer,Integer>(){
+
+            @Override
+            protected Integer doInBackground(Integer ...params){
+                float[][][][] pixels = getMat(bitmap);
+                float[][] output = new float[1][2];
+                tflite.run(pixels, output);
+                prediction = output[0];
+                for(int i = 0; i < prediction.length; i++){
+                    Log.d("TensorFlow", "Result " + i + ": " + prediction[i]);
+                }
+                return 0;
+            }
+
+            @Override
+            protected void onPostExecute(Integer integer) {
+                String result = "The item is garbage.";
+                if(prediction[1] > prediction[0]){
+                    result = "The item is recyclable.";
+                }
+                builder.setMessage(result).setTitle("Result");
+                builder.setCancelable(false);
+                builder.setPositiveButton("OK", null);
+                builder.create().show();
+            }
+        }.execute(0);
+
     }
     
 }

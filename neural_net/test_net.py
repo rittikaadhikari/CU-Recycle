@@ -1,6 +1,7 @@
 import keras
 from keras.models import load_model
 from keras import optimizers
+import tensorflow as tf
 import argparse
 import os
 import cv2
@@ -20,6 +21,7 @@ total_predictions_count = [0, 0]
 inc_predictions_count = [0, 0]
 class_index_dict = {"trash":0, "recycle":1}
 class_val_dict = {"trash":0.0, "recycle":0.0}
+
 if args.dir[-1] != '/':
     args.dir += '/'
 for(dirpath, dirnames, filenames) in os.walk(args.dir):
@@ -41,3 +43,4 @@ print("--------")
 print("Model:", args.model)
 print("Trash Accuracy:", (1 - (inc_predictions_count[0]/total_predictions_count[0])) * 100)
 print("Recycling Accuracy:", (1 - (inc_predictions_count[1]/total_predictions_count[1])) * 100)
+# '''
